@@ -1,0 +1,747 @@
+:root{
+    box-sizing:border-box;
+    --base-color:#7b5742;
+}
+body{
+    min-width: 935px;
+    max-width: 1080px;
+    margin: 0 auto;
+    font-family: 'Playfair Display', serif;
+    background-image: url(img/joe-mcdaniel-KhhOAsE5M6Y-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/**********************************************
+*********** heder ****************************
+**********************************************/
+
+header{
+    display: flex;
+    
+}
+.slogan{
+    font-family: 'Lobster', cursive;
+    font-size: 1em;
+    flex: 30%;
+}
+.slogan-h2{
+    font-size: .55em;
+}
+.icons{
+    flex: 70%;
+    margin-top: 34px;
+}
+.icons > a + a{
+    margin-left:50px ;
+}
+.icons > a > img{
+    width: 45px;
+    height: 45px;
+}
+/*.icons > a > img:hover{
+    width: 55px;
+    height: 55px;
+    cursor: url(img/icons8-cursor-48.png) , auto;
+}*/
+
+/**********************************************
+***********  base  ****************************
+**********************************************/
+
+.base{
+    display: flex; 
+    padding-bottom: 0;
+}
+
+/**********************************************
+*********   menu-right   **********************
+**********************************************/
+.menu-right{
+    order: 2;
+    flex-direction: column;
+    margin-top: -15px;
+    padding: 0;
+}
+
+.menu{
+    background: rgba(251,244,238,0.4);
+    order: 2;
+    height: 450px;
+    text-align: center;
+    margin-left: 20px;
+}
+.menu  a{
+    cursor: url(img/icons8-cursor-48.png) , auto;
+    text-decoration: none;
+}
+.nav-menu {
+    margin-left: 0;
+    padding-left: 0;
+}
+.nav-menu li{
+    list-style-type: none;
+    padding-top: 15px;
+}
+.menu li > a >  img {
+    width:50px;
+    height: 50px;
+}
+.menu li > a >  img:hover{
+    width:60px;
+    height: 60px;
+}
+.nav-menu li > a{
+    color: #111;
+}
+.nav-menu li > a:visited{
+    color: #111;
+}
+.nav-menu li > a:hover{
+    color: #111;
+    text-decoration: underline;
+}
+
+/**********************************************
+**********  main   ****************************
+**********************************************/
+
+.main{
+    min-width: 933.7px;
+    max-width: 933.7px;
+    order:1;
+    padding-top:1px ;
+    background: rgba(252,244,238,0.8);
+    background-position: 25% 75%;
+}
+.main .slogan-h1{
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 0;
+    margin-top: 0;
+}
+.main .slogan-p{
+    text-align: left;
+    padding-left:50px ;
+    padding-right: 50px;
+    font-size: 1.2em;
+    margin-bottom: 60px;
+}
+.title{
+    color: var(--base-color);
+}
+
+/**********************************************
+*******           search       ****************
+**********************************************/
+
+.search{
+    display: flex;
+    color:#868282;
+    border: 1px solid #868282;
+    background: #fff;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 800px;
+    height: 45px;
+    margin: auto;
+
+}
+.search button{
+    border: none;
+    background: #fff;
+}
+.search input{
+    text-decoration: underline;
+    font-size: 1.5em;
+    color:#868282;
+    border: 1px solid #868282;
+    width: 800px;
+    border: none;
+} 
+.search input:hover{
+    outline: none;
+    border: none;
+}
+.search input:visited{
+    outline: none;
+    border: none;
+}
+
+/**********************************************
+*******          img-right     ****************
+**********************************************/
+.img-right{
+    flex-direction:flex-end;
+    margin-left: 20px;
+    margin-top: 560px;
+}
+
+.img-right img{ 
+    transform: rotate(90deg);
+}
+
+/**********************************************************************************/
+
+/**********************************************
+*******    card .gallery       ****************
+**********************************************/
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1vw);
+    grid-gap: 10px;
+    grid-template-rows: repeat(auto-fill, minmax(30px, 1vw));
+   /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));*/
+    margin: 0;
+    padding-left: 5px;
+    padding-right: 3px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.gallery img{
+    border-radius: 20px;
+}
+.card{
+    cursor: url(img/icons8-cursor-48.png) , auto;
+}
+.front{
+    margin: 0;
+    padding: 0;    
+}   
+.front, .back {
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    backface-visibility: hidden;
+} 
+.card{
+    position: relative;
+    perspective: 1000px;
+}
+.back{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility: hidden;
+}
+.back-text {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility: hidden;
+}
+.back {
+    transform: rotateY(180deg);
+  }
+.back-text {
+    transform: rotateY(180deg);
+}
+.card:hover .front {
+    transform: rotateY(180deg);}
+.card:hover .back {
+    transform: rotateY(360deg);}
+.card:hover .back-text {
+    transform: rotateY(360deg);}
+/**********************************************
+*******         card 1         ****************
+**********************************************/
+
+.gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.gallery__item--1 img{
+    width: 350px;
+    height: 200px;
+}
+.gallery__item--1 .card {
+    width: 350px;
+    height: 200px;
+}
+.gallery__item--1 .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.3)), url(img/icons/howling-red-h1m9d0OEGQk-unsplash.jpg);
+    background-size: 350px 200px;
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.gallery__item--1 .back-text{
+    font-size: 0.63em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**********************************************
+*******         card 2         ****************
+**********************************************/
+
+.gallery__item--2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+.gallery__item--2 img{
+    object-fit: cover;
+    width: 170px;
+    height: 200px;
+}
+.gallery__item--2 .card {
+    width: 170px;
+    height: 200px;
+}
+.gallery__item--2 .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.3)), url(img/icons/kevin-folk-bomeKKwqOgU-unsplash.jpg);
+    background-size: 170px 200px;
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.gallery__item--2 .back-text{
+    font-size: 0.63em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**********************************************
+*******         card 3         ****************
+**********************************************/
+
+.gallery__item--3 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+.gallery__item--3 img{
+    object-fit: cover;
+    width: 170px;
+    height: 200px;
+}
+
+.gallery__item--3 .card {
+    width: 170px;
+    height: 200px;
+}
+.gallery__item--3 .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.3)), url(img/icons/vorster-vanzyl-5kACmX4vwsA-unsplash.jpg);
+    background-position: center;
+    background-size: 170px 200px;
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.gallery__item--3 .back-text{
+    font-size: 0.63em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**********************************************
+*******         card 4         ****************
+**********************************************/
+
+.gallery__item--4 {
+    grid-column-start:1 ;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 7;
+}
+.gallery__item--4 img{
+    width: 350px;
+    height: 200px;
+}
+
+.gallery__item--4 .card {
+    width: 350px;
+    height: 200px;
+}
+.gallery__item--4 .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.3)), url(img/icons/charl-durand-_YVhRwUlL4Y-unsplash.jpg);
+    background-size: 350px 200px;
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.gallery__item--4 .back-text{
+    font-size: 0.63em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**********************************************
+*******         card 5         ****************
+**********************************************/
+
+.gallery__item--5 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+.gallery__item--5 img{
+    width: 200px;
+    height: 305px;
+}
+
+.gallery__item--5 .card {
+    width: 200px;
+    height: 305px;
+}
+.gallery__item--5 .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.3)), url(img/icons/luke-tanis-IPRFX7CVVoU-unsplash.jpg);
+    background-size: 200px 305px;
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.gallery__item--5 .back-text{
+    font-size: 0.63em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**********************************************
+*******         card 6         ****************
+**********************************************/
+
+.gallery__item--6 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 7;
+}
+.gallery__item--6 img{
+    width: 200px;
+    height: 305px;
+}
+
+.gallery__item--6 .card {
+    width: 200px;
+    height: 305px;
+}
+.gallery__item--6 .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.3)), url(img/icons/y-s-ThyayqO72V8-unsplash.jpg);
+    background-size: 200px 305px;
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.gallery__item--6 .back-text{
+    font-size: 0.63em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**********************************************
+*******         card 7         ****************
+**********************************************/
+
+.gallery__item--7 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.gallery__item--7 img{
+    width: 350px;
+    height: 200px;
+} 
+
+.gallery__item--7 .card {
+    width: 350px;
+    height: 200px;
+}
+.gallery__item--7 .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.3)), url(img/icons/sutirta-budiman-A2RUYt7YBEI-unsplash.jpeg);
+    background-size: 350px 200px;
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.gallery__item--7 .back-text{
+    font-size: 0.63em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**********************************************
+*******         card 8         ****************
+**********************************************/
+
+.gallery__item--8 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+.gallery__item--8 img{
+    width: 350px;
+    height: 200px;
+}
+
+.gallery__item--8 .card {
+    width: 350px;
+    height: 200px;
+}
+.gallery__item--8 .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.3)), url(img/icons/david-groves-bcJUbYd5gTo-unsplash.jpg);
+    background-size: 350px 200px;
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.gallery__item--8 .back-text{
+    font-size: 0.63em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**********************************************
+*******         card 9         ****************
+**********************************************/
+
+.gallery__item--9 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 5;
+    grid-row-end: 7;
+}
+.gallery__item--9 img{
+    object-fit: cover;
+    width: 170px;
+    height: 200px;
+}
+.gallery__item--9 .card {
+    width: 170px;
+    height: 200px;
+}
+.gallery__item--9 .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.3)), url(img/icons/kevin-folk-TkM87b0mRWk-unsplash.jpg);
+    background-position: center;
+    background-size: 170px 200px;
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.gallery__item--9 .back-text{
+    font-size: 0.63em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**********************************************
+*******         card 10        ****************
+**********************************************/
+
+.gallery__item--10 {
+    grid-column-start:5;
+    grid-column-end:6;
+    grid-row-start:5;
+    grid-row-end:7;
+}
+.gallery__item--10 img{
+    object-fit: cover;
+    width: 170px;
+    height: 200px;
+}
+
+.gallery__item--10 .card {
+    width: 170px;
+    height: 200px;
+}
+.gallery__item--10 .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.27),rgba(0, 0, 0, 0.3)), url(img/icons/mackenzie-cruz-W6C7cqE3Y0s-unsplash.jpg);
+    background-position: center;
+    background-size: 170px 200px;
+    filter: blur(1px);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.gallery__item--10 .back-text{
+    font-size: 0.63em;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**********************************************************************************/
+
+/**********************************************
+*******          footer        ****************
+**********************************************/
+footer{
+    min-width: 933.7px;
+    max-width: 933.7px;
+    display: flex;
+    flex-direction:row;
+    margin: 0;
+    padding: 0;
+    background-image:linear-gradient(rgba(190, 116, 116, 0.17),rgba(190, 116, 116, 0.2)), url(img/martin-fennema-d0PQT3kB6VQ-unsplash.png);
+    background-size: cover;
+}
+.footer-h1{
+    flex: 2;
+}
+.footer-h1 h3{
+    color: #ffb700;
+    text-shadow: 1px 1px 2px black;
+    padding-bottom: 0;
+    padding-left: 20px;
+    margin-bottom: -15px;
+}
+.footer-p{
+    padding-left: 20px;
+    padding-top: 0;
+    margin-top: 0;
+    color: #868282;
+    text-shadow: 1px 1px 2px black;
+}
+.footer-h2{
+    color: #ffb700;
+    text-shadow: 1px 1px 2px black;
+    flex: 2;
+    text-align: right;
+}
